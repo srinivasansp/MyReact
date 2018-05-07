@@ -45,27 +45,16 @@ ul.header li a {
   background-color: #0099FF;
 }
 
-.wrap {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .button {
-  width: 140px;
-  height: 45px;
+  width: 100px;
+  height: 30px;
   font-family: sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
   color: blue;
-  background-color: grey;
+  background-color: white;
   border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+  border-radius: 4px;
   cursor: pointer;
   outline: none;
 }
@@ -87,21 +76,16 @@ ul.header li a {
   height: 100%;
 }
 
-.modal-content {
-  background-color: #fefefe;
-  padding: 20px;
-}
-
 label {
   display: block;
   padding:10px 60px 10px 10px;
   color:#999999;
   font-weight:bold;
-  width:600px;
+  width:550px;
 }
 
 input {
-  width:350px;
+  width:300px;
   height:2px;
   border-radius:4px;
   border:2px solid #999999;
@@ -110,11 +94,4 @@ input {
   font-weight: bold;
   color:#999999;
   float: right;
-}
-
-#wrapper {
-  background:#ffffff;
-  width:700px;
-  margin:120px 100px;
-  border:5px solid #999999;
 }

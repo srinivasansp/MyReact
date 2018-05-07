@@ -37,7 +37,6 @@ class FormAdd extends Component {
   return (
       <Popup open={true} position="top left">
         <div className="modal" >
-          <div id="wrapper">
             <form onSubmit={this.handleSubmit}>
               <label>
                   Connector Name:<input id="connector_name" name="connector_name" type="text" value = {this.state.connector_name} onChange={this.handleChange} />
@@ -51,11 +50,8 @@ class FormAdd extends Component {
               <label>
                 Actual Params:<input id="actual_param" name="actual_param" type="text" value = {this.state.actual_param} onChange={this.handleChange} />
               </label>
-              <div className="wrap">
-                <button className="button">Submit</button>
-              </div>
+              <button className="button">Submit</button>
             </form>
-          </div>
         </div>
       </Popup>
     );
