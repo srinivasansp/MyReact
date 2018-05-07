@@ -4,12 +4,20 @@ import RestAPI from "./RestLibraries";
 
 const libraries = new RestAPI();
 
-class FormAdd extends Component {
+class UpdateConnectors extends Component {
   constructor(props) {
     super(props);
-    this.state = {connector_name: '', connector_description: '', version: '', actual_param: ''};
+    this.state = {id: '', connector_name: '', connector_description: '', version: '', actual_param: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({id: this.props.id});
+    this.setState({connector_name: this.props.name});
+    this.setState({connector_description: this.props.description});
+    this.setState({version: this.props.version});
+    this.setState({actual_param: this.props.params});
   }
 
   handleChange(event) {
@@ -23,11 +31,11 @@ class FormAdd extends Component {
 
   handleSubmit(event) {
     event.preventDefault(); //this line of reload the page*/
-    this.addConnectors();
+    this.editConnectors();
   }
 
-  async addConnectors () {
-    var response = await libraries.addConnector(this.state.connector_name, this.state.connector_description, this.state.version, this.state.actual_param)
+  async editConnectors () {
+    var response = await libraries.editConnector(this.state.id, this.state.connector_name, this.state.connector_description, this.state.version, this.state.actual_param)
     .then (function (){
       window.location.reload()
     });
@@ -50,7 +58,7 @@ class FormAdd extends Component {
               <label>
                 Actual Params:<input id="actual_param" name="actual_param" type="text" value = {this.state.actual_param} onChange={this.handleChange} />
               </label>
-              <button className="button">Submit</button>
+              <button className="button">Update</button>
             </form>
         </div>
       </Popup>
@@ -58,4 +66,4 @@ class FormAdd extends Component {
   }
 }
 
-export default FormAdd;
+export default UpdateConnectors;

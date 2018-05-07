@@ -7,6 +7,7 @@ config.set(configuration);
 const MANAGEURL = config.get('manageURL');
 const PASSPORTURL = config.get('passportURL');
 const CONNECTOR = '/v1/connectors';
+const PROCESSOR = 'v1/processors'
 
 
 export default class RestLibraries {
@@ -43,6 +44,24 @@ export default class RestLibraries {
 
   deleteConnector (id){
     return axios.delete(MANAGEURL + CONNECTOR + '/id=' + id)
+  }
+
+  getProcessors (){
+    return axios.get(MANAGEURL + PROCESSOR)
+  }
+  
+  editProcessors (id, name, script){
+    return axios.put(MANAGEURL + PROCESSOR + '/id=' + id, {
+      transform_name: name,
+      transform_script: script
+    })
+  }
+
+  addProcessor (name, script){
+    return axios.post(MANAGEURL + PROCESSOR, {
+      transform_name: name,
+      transform_script: script
+    })
   }
 
 }

@@ -4,30 +4,27 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid/dist/styles/ag-grid.css';
 import 'ag-grid/dist/styles/ag-theme-balham.css'
 import RestAPI from "./lib/RestLibraries";
-import UpdateConnectors from "./lib/UpdateConnectors";
-import AddConnectors from "./lib/AddConnectors";
+import AddProcessors from "./lib/AddProcessors";
+import UpdateProcessors from "./lib/UpdateProcessors";
 
 const libraries = new RestAPI();
 
-class Connectors extends Component {
+class Processors extends Component {
   constructor(props) {
       super(props);
       this.state = {
         hasMounted: false,
           columnDefs: [
               {headerName: "ID", field: "id", checkboxSelection: true},
-              {headerName: "Connector Name", field: "connector_name"},
-              {headerName: "Connector description", field: "connector_description"},
-              {headerName: "Version", field: "version"},
-              {headerName: "Actual Params", field: "actual_param"}
-
+              {headerName: "Transform Name", field: "transform_name"},
+              {headerName: "Transform Script", field: "transform_script"}
           ],
           rowData: []
       }
   }
 
   async componentWillMount(){
-      var response = await libraries.getConnectors();
+      var response = await libraries.getProcessors();
       this.state.rowData = response.data;
       this.setState({ hasMounted: true })
     }
@@ -35,20 +32,17 @@ class Connectors extends Component {
   getSelectedRow = e => {
       const selectedNodes = this.gridApi.getSelectedNodes()
       const selectedData = selectedNodes.map(node => node.data)
-      this.connectorId = selectedData.map(node => node.id)
-      this.updatedConnectorName = selectedData.map(node => node.connector_name)
-      this.updatedConnectorDescription = selectedData.map(node => node.connector_description)
-      this.updatedVersion = selectedData.map(node => node.version)
-      this.updatedActualParams = selectedData.map(node => node.actual_param)
-      ReactDOM.render(<UpdateConnectors id = {this.connectorId} name = {this.updatedConnectorName} description = {this.updatedConnectorDescription}
-        version = {this.updatedVersion} params = {this.updatedActualParams} />, document.getElementById("submit_form"))
+      this.processorId = selectedData.map(node => node.id)
+      this.updatedTransformName = selectedData.map(node => node.transform_name)
+      this.updatedTransformScript = selectedData.map(node => node.transform_script)
+      ReactDOM.render(<UpdateProcessors id = {this.processorId} name = {this.updatedTransformName} description = {this.updatedTransformScript} />, document.getElementById("submit_form"))
   }
 
-  addConnector () {
-      ReactDOM.render(<AddConnectors type='connectors'/>, document.getElementById("submit_add"))
+  addProcessor () {
+      ReactDOM.render(<AddProcessors />, document.getElementById("submit_add"))
   }
 
-  deleteConnector = e => {
+  deleteProcessor = e => {
     const selectedNodes = this.gridApi.getSelectedNodes()
     const selectedData = selectedNodes.map(node => node.data)
     this.connectorId = selectedData.map(node => node.id)
@@ -77,4 +71,4 @@ class Connectors extends Component {
 };
 
 
-export default Connectors;
+export default Processors;

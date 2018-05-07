@@ -4,7 +4,7 @@ import RestAPI from "./RestLibraries";
 
 const libraries = new RestAPI();
 
-class FormSubmit extends Component {
+class UpdateProcessors extends Component {
   constructor(props) {
     super(props);
     this.state = {id: '', connector_name: '', connector_description: '', version: '', actual_param: ''};
@@ -35,7 +35,7 @@ class FormSubmit extends Component {
   }
 
   async editConnectors () {
-    var response = await libraries.editConnector(this.state.id, this.state.connector_name, this.state.connector_description, this.state.version, this.state.actual_param)
+    var response = await libraries.editProcessors(this.state.id, this.state.transform_name, this.state.transform_script)
     .then (function (){
       window.location.reload()
     });
@@ -44,20 +44,20 @@ class FormSubmit extends Component {
   render() {
   return (
       <Popup open={true} position="top left">
-      {close => (
-        <div className="modal">
-        <form onSubmit={this.handleSubmit}>
-            Name:<input id="name" name="connector_name" type="text" value = {this.state.connector_name} onChange={this.handleChange} /><br />
-            Description:<input id="description" name="connector_description" type="text" value = {this.state.connector_description} onChange={this.handleChange} /><br />
-            Version:<input id="version" name="version" type="text" value = {this.state.version} onChange={this.handleChange} /><br />
-            params:<input id="actual_param" name="actual_param" type="text" value = {this.state.actual_param} onChange={this.handleChange} /><br />
-            <button>Update</button>
-          </form>
+        <div className="modal" >
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                  Connector Name:<input id="transform_name" name="transform_name" type="text" value = {this.state.transform_name} onChange={this.handleChange} />
+              </label>
+              <label>
+                Connector Description:<input id="transform_script" name="transform_script" type="text" value = {this.state.transform_script} onChange={this.handleChange} />
+              </label>
+              <button className="button">Update</button>
+            </form>
         </div>
-      )}
       </Popup>
     );
   }
 }
 
-export default FormSubmit;
+export default UpdateProcessors;
