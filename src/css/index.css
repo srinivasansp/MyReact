@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  background:#44bded;
+  /*background:#44bded;*/ 
   color:#000000;
 }
 h1, h2, p, ul, li {
@@ -11,7 +11,7 @@ h1, h2, p, ul, li {
 }
 
 h1 {
-  color: red;
+  color: black;
 }
 ul.header li {
   display: inline;
