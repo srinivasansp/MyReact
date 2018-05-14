@@ -7,7 +7,7 @@ config.set(configuration);
 const MANAGEURL = config.get('manageURL');
 const PASSPORTURL = config.get('passportURL');
 const CONNECTOR = '/v1/connectors';
-const PROCESSOR = 'v1/processors'
+const PROCESSOR = '/v1/processors'
 
 
 export default class RestLibraries {
@@ -49,7 +49,7 @@ export default class RestLibraries {
   getProcessors (){
     return axios.get(MANAGEURL + PROCESSOR)
   }
-  
+
   editProcessors (id, name, script){
     return axios.put(MANAGEURL + PROCESSOR + '/id=' + id, {
       transform_name: name,

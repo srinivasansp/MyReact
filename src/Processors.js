@@ -35,7 +35,7 @@ class Processors extends Component {
       this.processorId = selectedData.map(node => node.id)
       this.updatedTransformName = selectedData.map(node => node.transform_name)
       this.updatedTransformScript = selectedData.map(node => node.transform_script)
-      ReactDOM.render(<UpdateProcessors id = {this.processorId} name = {this.updatedTransformName} description = {this.updatedTransformScript} />, document.getElementById("submit_form"))
+      ReactDOM.render(<UpdateProcessors id = {this.processorId} name = {this.updatedTransformName} script = {this.updatedTransformScript} />, document.getElementById("submit_form"))
   }
 
   addProcessor () {
@@ -56,8 +56,8 @@ class Processors extends Component {
     return (
           <div className="ag-theme-balham" style= {{height: '900px',width: '1000px' }} >
               <button className="button" onClick={this.getSelectedRow}>Edit</button>
-              <button className="button" onClick={this.addConnector}>Add</button>
-              <button className="button" onClick={this.deleteConnector}>Delete</button>
+              <button className="button" onClick={this.addProcessor}>Add</button>
+              <button className="button" onClick={this.deleteProcessor}>Delete</button>
               <AgGridReact
                   onGridReady={ params => this.gridApi = params.api }
                   enableSorting={true}

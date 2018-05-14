@@ -7,17 +7,15 @@ const libraries = new RestAPI();
 class UpdateProcessors extends Component {
   constructor(props) {
     super(props);
-    this.state = {id: '', connector_name: '', connector_description: '', version: '', actual_param: ''};
+    this.state = {id: '', transform_name: '', transform_script: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount() {
     this.setState({id: this.props.id});
-    this.setState({connector_name: this.props.name});
-    this.setState({connector_description: this.props.description});
-    this.setState({version: this.props.version});
-    this.setState({actual_param: this.props.params});
+    this.setState({transform_name: this.props.name});
+    this.setState({transform_script: this.props.script});
   }
 
   handleChange(event) {
@@ -47,10 +45,10 @@ class UpdateProcessors extends Component {
         <div className="modal" >
             <form onSubmit={this.handleSubmit}>
               <label>
-                  Connector Name:<input id="transform_name" name="transform_name" type="text" value = {this.state.transform_name} onChange={this.handleChange} />
+                  Transform Name:<input id="transform_name" name="transform_name" type="text" value = {this.state.transform_name} onChange={this.handleChange} />
               </label>
               <label>
-                Connector Description:<input id="transform_script" name="transform_script" type="text" value = {this.state.transform_script} onChange={this.handleChange} />
+                Transform Script:<input id="transform_script" name="transform_script" type="text" value = {this.state.transform_script} onChange={this.handleChange} />
               </label>
               <button className="button">Update</button>
             </form>

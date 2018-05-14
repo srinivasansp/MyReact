@@ -39,10 +39,10 @@ class AddProcessors extends Component {
         <div className="modal" >
             <form onSubmit={this.handleSubmit}>
               <label>
-                  Connector Name:<input id="transform_name" name="transform_name" type="text" value = {this.state.transform_name} onChange={this.handleChange} />
+                  Transform Name:<input id="transform_name" name="transform_name" type="text" value = {this.state.transform_name} onChange={this.handleChange} />
               </label>
               <label>
-                Connector Description:<input id="connector_description" name="connector_description" type="text" value = {this.state.transform_script} onChange={this.handleChange} />
+                Transform Script:<input id="transform_script" name="transform_script" type="text" value = {this.state.transform_script} onChange={this.handleChange} />
               </label>
               <button className="button">Submit</button>
             </form>

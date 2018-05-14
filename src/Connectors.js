@@ -45,7 +45,7 @@ class Connectors extends Component {
   }
 
   addConnector () {
-      ReactDOM.render(<AddConnectors type='connectors'/>, document.getElementById("submit_add"))
+      ReactDOM.render(<AddConnectors />, document.getElementById("submit_add"))
   }
 
   deleteConnector = e => {

@@ -23,8 +23,7 @@ class AddConnectors extends Component {
 
   handleSubmit(event) {
     event.preventDefault(); //this line of reload the page*/
-    if (this.state.type == 'connectors') {this.addConnectors()};
-    if (this.state.type == 'processors') {this.addProcessors()};
+    this.addConnectors()
   }
 
   async addConnectors () {
