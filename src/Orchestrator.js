@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Archestrator extends Component {
+class Orchestrator extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class Archestrator extends Component {
   }
 }
 
-export default Archestrator;
+export default Orchestrator;
