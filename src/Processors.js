@@ -45,8 +45,8 @@ class Processors extends Component {
   deleteProcessor = e => {
     const selectedNodes = this.gridApi.getSelectedNodes()
     const selectedData = selectedNodes.map(node => node.data)
-    this.connectorId = selectedData.map(node => node.id)
-    var response = libraries.deleteConnector(this.connectorId).then (function (){
+    this.processorId = selectedData.map(node => node.id)
+    var response = libraries.deleteProcessor(this.processorId).then (function (){
       window.location.reload()
     });
   }

@@ -4,18 +4,17 @@ import RestAPI from "./RestLibraries";
 
 const libraries = new RestAPI();
 
-class UpdateProcessors extends Component {
+class UpdateOrchestrators extends Component {
   constructor(props) {
     super(props);
-    this.state = {id: '', transform_name: '', transform_script: ''};
+    this.state = {id: '', orch_name: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount() {
     this.setState({id: this.props.id});
-    this.setState({transform_name: this.props.name});
-    this.setState({transform_script: this.props.script});
+    this.setState({orch_name: this.props.name});
   }
 
   handleChange(event) {
@@ -29,11 +28,11 @@ class UpdateProcessors extends Component {
 
   handleSubmit(event) {
     event.preventDefault(); //this line of reload the page*/
-    this.editProcessors();
+    this.editOrchestrators();
   }
 
-  async editProcessors () {
-    var response = await libraries.editProcessors(this.state.id, this.state.transform_name, this.state.transform_script)
+  async editOrchestrators () {
+    var response = await libraries.editOrchestrators(this.state.id, this.state.orch_name)
     .then (function (){
       window.location.reload()
     });
@@ -45,10 +44,7 @@ class UpdateProcessors extends Component {
         <div className="modal" >
             <form onSubmit={this.handleSubmit}>
               <label>
-                  Transform Name:<input id="transform_name" name="transform_name" type="text" value = {this.state.transform_name} onChange={this.handleChange} />
-              </label>
-              <label>
-                Transform Script:<input id="transform_script" name="transform_script" type="text" value = {this.state.transform_script} onChange={this.handleChange} />
+                  Orch Name:<input id="orch_name" name="orch_name" type="text" value = {this.state.orch_name} onChange={this.handleChange} />
               </label>
               <button className="button">Update</button>
             </form>
@@ -58,4 +54,4 @@ class UpdateProcessors extends Component {
   }
 }
 
-export default UpdateProcessors;
+export default UpdateOrchestrators;

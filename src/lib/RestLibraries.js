@@ -8,6 +8,7 @@ const MANAGEURL = config.get('manageURL');
 const PASSPORTURL = config.get('passportURL');
 const CONNECTOR = '/v1/connectors';
 const PROCESSOR = '/v1/processors'
+const ORCHESTRATOR = '/v1/orchestrator/definition'
 
 
 export default class RestLibraries {
@@ -61,6 +62,22 @@ export default class RestLibraries {
     return axios.post(MANAGEURL + PROCESSOR, {
       transform_name: name,
       transform_script: script
+    })
+  }
+
+  getOrchestrators (){
+    return axios.get(MANAGEURL + '/v1/orchestrator')
+  }
+
+  editOrchestrators (id, name){
+    return axios.put(MANAGEURL + ORCHESTRATOR + '/id=' + id, {
+      name: name
+    })
+  }
+
+  addOrchestrator (name){
+    return axios.post(MANAGEURL + ORCHESTRATOR, {
+      name: name
     })
   }
 
