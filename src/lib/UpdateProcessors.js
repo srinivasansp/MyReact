@@ -33,7 +33,7 @@ class UpdateProcessors extends Component {
   }
 
   async editProcessors () {
-    var response = await libraries.editProcessors(this.state.id, this.state.transform_name, this.state.transform_script)
+    var response = await libraries.editProcessors(this.state.id, this.state.transform_name.toString(), this.state.transform_script.toString())
     .then (function (){
       window.location.reload()
     });

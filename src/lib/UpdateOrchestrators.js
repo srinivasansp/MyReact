@@ -32,7 +32,7 @@ class UpdateOrchestrators extends Component {
   }
 
   async editOrchestrators () {
-    var response = await libraries.editOrchestrators(this.state.id, this.state.orch_name)
+    var response = await libraries.editOrchestrators(this.state.id, this.state.orch_name.toString())
     .then (function (){
       window.location.reload()
     });

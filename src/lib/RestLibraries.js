@@ -26,7 +26,7 @@ export default class RestLibraries {
   }
 
   editConnector (id, name, description, version, params){
-    return axios.put(MANAGEURL + CONNECTOR + '/id=' + id, {
+    return axios.put(MANAGEURL + CONNECTOR + '/' + id, {
       connector_name: name,
       connector_description: description,
       version: version,
@@ -44,7 +44,7 @@ export default class RestLibraries {
   }
 
   deleteConnector (id){
-    return axios.delete(MANAGEURL + CONNECTOR + '/id=' + id)
+    return axios.delete(MANAGEURL + CONNECTOR + '/' + id)
   }
 
   getProcessors (){
@@ -52,7 +52,7 @@ export default class RestLibraries {
   }
 
   editProcessors (id, name, script){
-    return axios.put(MANAGEURL + PROCESSOR + '/id=' + id, {
+    return axios.put(MANAGEURL + PROCESSOR + '/' + id, {
       transform_name: name,
       transform_script: script
     })
@@ -70,7 +70,7 @@ export default class RestLibraries {
   }
 
   editOrchestrators (id, name){
-    return axios.put(MANAGEURL + ORCHESTRATOR + '/id=' + id, {
+    return axios.put(MANAGEURL + ORCHESTRATOR + '/' + id, {
       name: name
     })
   }

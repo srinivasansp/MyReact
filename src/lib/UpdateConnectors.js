@@ -7,7 +7,7 @@ const libraries = new RestAPI();
 class UpdateConnectors extends Component {
   constructor(props) {
     super(props);
-    this.state = {id: '', connector_name: '', connector_description: '', version: '', actual_param: ''};
+    this.state = {id: '', connector_name: '', connector_description: '', version:null, actual_param:null};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -35,7 +35,7 @@ class UpdateConnectors extends Component {
   }
 
   async editConnectors () {
-    var response = await libraries.editConnector(this.state.id, this.state.connector_name, this.state.connector_description, this.state.version, this.state.actual_param)
+    var response = await libraries.editConnector(this.state.id, this.state.connector_name.toString(), this.state.connector_description.toString(), parseInt(this.state.version), this.state.actual_param)
     .then (function (){
       window.location.reload()
     });
