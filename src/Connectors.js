@@ -4,8 +4,7 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid/dist/styles/ag-grid.css';
 import 'ag-grid/dist/styles/ag-theme-balham.css'
 import RestAPI from "./lib/RestLibraries";
-import UpdateConnectors from "./lib/UpdateConnectors";
-import AddConnectors from "./lib/AddConnectors";
+import EditConnectors from "./lib/EditConnectors";
 
 const libraries = new RestAPI();
 
@@ -32,7 +31,7 @@ class Connectors extends Component {
       this.setState({ hasMounted: true })
     }
 
-  getSelectedRow = e => {
+    editConnector = e => {
       const selectedNodes = this.gridApi.getSelectedNodes()
       const selectedData = selectedNodes.map(node => node.data)
       this.connectorId = selectedData.map(node => node.id)
@@ -40,12 +39,12 @@ class Connectors extends Component {
       this.updatedConnectorDescription = selectedData.map(node => node.connector_description)
       this.updatedVersion = selectedData.map(node => node.version)
       this.updatedActualParams = selectedData.map(node => node.actual_param)
-      ReactDOM.render(<UpdateConnectors id = {this.connectorId} name = {this.updatedConnectorName} description = {this.updatedConnectorDescription}
-        version = {this.updatedVersion} params = {this.updatedActualParams} />, document.getElementById("submit_form"))
+      ReactDOM.render(<EditConnectors id = {this.connectorId} name = {this.updatedConnectorName} description = {this.updatedConnectorDescription}
+                                      version = {this.updatedVersion} params = {this.updatedActualParams} />, document.getElementById("formSubmit"))
   }
 
   addConnector () {
-      ReactDOM.render(<AddConnectors />, document.getElementById("submit_add"))
+      ReactDOM.render(<EditConnectors />, document.getElementById("formSubmit"))
   }
 
   deleteConnector = e => {
@@ -61,7 +60,7 @@ class Connectors extends Component {
   render() {
     return (
           <div className="ag-theme-balham" style= {{height: '900px',width: '1000px' }} >
-              <button className="button" onClick={this.getSelectedRow}>Edit</button>
+              <button className="button" onClick={this.editConnector}>Edit</button>
               <button className="button" onClick={this.addConnector}>Add</button>
               <button className="button" onClick={this.deleteConnector}>Delete</button>
               <AgGridReact

@@ -4,12 +4,20 @@ import RestAPI from "./RestLibraries";
 
 const libraries = new RestAPI();
 
-class AddConnectors extends Component {
+class EditConnectors extends Component {
   constructor(props) {
     super(props);
-    this.state = {connector_name: '', connector_description: '', version: '', actual_param: ''};
+    this.state = {id: '', connector_name: '', connector_description: '', version:null, actual_param:null};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({id: this.props.id});
+    this.setState({connector_name: this.props.name});
+    this.setState({connector_description: this.props.description});
+    this.setState({version: this.props.version});
+    this.setState({actual_param: this.props.params});
   }
 
   handleChange(event) {
@@ -22,16 +30,24 @@ class AddConnectors extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault(); //this line of reload the page*/
-    this.addConnectors()
+      event.preventDefault(); //this line of reload the page*/
+      console.log("tag:", this.state.tag);
+      if (this.state.id == "" ? this.editConnectors() : this.addConnectors());
   }
 
-  async addConnectors () {
-    var response = await libraries.addConnector(this.state.connector_name, this.state.connector_description, this.state.version, this.state.actual_param)
+  async editConnectors () {
+    var response = await libraries.editConnector(this.state.id, this.state.connector_name.toString(), this.state.connector_description.toString(), parseInt(this.state.version), this.state.actual_param)
     .then (function (){
       window.location.reload()
     });
   }
+
+  async addConnectors () {
+    var response = await libraries.addConnector(this.state.connector_name, this.state.connector_description, this.state.version, this.state.actual_param)
+        .then (function (){
+            window.location.reload()
+        });
+    }
 
   render() {
   return (
@@ -52,10 +68,10 @@ class AddConnectors extends Component {
               </label>
               <button className="button">Submit</button>
             </form>
-          </div>
-        </Popup>
+        </div>
+      </Popup>
     );
   }
 }
 
-export default AddConnectors;
+export default EditConnectors;
