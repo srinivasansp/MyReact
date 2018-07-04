@@ -25,21 +25,21 @@ export default class RestLibraries {
     return axios.get(MANAGEURL + CONNECTOR)
   }
 
-  editConnector (id, name, description, version, params){
-    return axios.put(MANAGEURL + CONNECTOR + '/' + id, {
-      connector_name: name,
-      connector_description: description,
-      version: version,
-      actual_param: params
+  editConnector (data){
+    return axios.put(MANAGEURL + CONNECTOR + '/' + data.id, {
+      connector_name: data.name,
+      connector_description: data.description,
+      version: data.version,
+      actual_param: data.params
     })
   }
 
-  addConnector (name, description, version, params){
+  addConnector (data){
     return axios.post(MANAGEURL + CONNECTOR, {
-      connector_name: name,
-      connector_description: description,
-      version: version,
-      actual_param: params
+      connector_name: data.connector_name,
+      connector_description: data.connector_description,
+      version: data.version,
+      actual_param: data.actual_param
     })
   }
 

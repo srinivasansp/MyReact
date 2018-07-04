@@ -8,6 +8,8 @@ import EditConnectors from "./lib/EditConnectors";
 
 const libraries = new RestAPI();
 
+var data = {};
+
 class Connectors extends Component {
   constructor(props) {
       super(props);
@@ -39,12 +41,19 @@ class Connectors extends Component {
       this.updatedConnectorDescription = selectedData.map(node => node.connector_description)
       this.updatedVersion = selectedData.map(node => node.version)
       this.updatedActualParams = selectedData.map(node => node.actual_param)
-      ReactDOM.render(<EditConnectors id = {this.connectorId} name = {this.updatedConnectorName} description = {this.updatedConnectorDescription}
-                                      version = {this.updatedVersion} params = {this.updatedActualParams} />, document.getElementById("formSubmit"))
+      data = {
+          id: this.connectorId,
+          connector_name: this.updatedConnectorName,
+          connector_description: this.updatedConnectorDescription,
+          version: this.updatedVersion,
+          actual_param: this.updatedActualParams
+
+      };
+      ReactDOM.render(<EditConnectors updateItems = {data} />, document.getElementById("formSubmit"))
   }
 
   addConnector () {
-      ReactDOM.render(<EditConnectors />, document.getElementById("formSubmit"))
+      ReactDOM.render(<EditConnectors updateItems = {data}/>, document.getElementById("formSubmit"))
   }
 
   deleteConnector = e => {
