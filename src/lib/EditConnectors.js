@@ -21,24 +21,11 @@ class EditConnectors extends Component {
   }
 
 
-  handleSubmit(event) {
-      event.preventDefault(); //this line of reload the page*/
-      if (this.state.data.id == "" ? this.editConnectors() : this.addConnectors());
+  async handleSubmit(event) {
+      event.preventDefault(); //this line will reload the page*/
+      if (this.state.data.id == "" ? await libraries.editConnector(this.state.data).then (function () {window.location.reload()}) :
+          await libraries.addConnector(this.state.data).then (function () {window.location.reload()}));
   }
-
-  async editConnectors () {
-    var response = await libraries.editConnector(this.state.data)
-    .then (function (){
-      window.location.reload()
-    });
-  }
-
-  async addConnectors () {
-    var response = await libraries.addConnector(this.state.data)
-        .then (function (){
-            window.location.reload()
-        });
-    }
 
   render() {
   return (
