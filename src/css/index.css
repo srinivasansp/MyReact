@@ -66,7 +66,7 @@ ul.header li a {
   transform: translateY(-7px);
 }
 
-.modal {
+.formmodal {
   font-size: 13px;
   font-family: sans-serif;
   color: blue;

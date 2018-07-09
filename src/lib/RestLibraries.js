@@ -25,8 +25,8 @@ export default class RestLibraries {
     return axios.get(MANAGEURL + CONNECTOR)
   }
 
-  editConnector (data){
-    return axios.put(MANAGEURL + CONNECTOR + '/' + data.id, data)
+  editConnector (data, connector_id){
+    return axios.put(MANAGEURL + CONNECTOR + '/' + connector_id, data)
   }
 
   addConnector (data){
@@ -37,38 +37,37 @@ export default class RestLibraries {
     return axios.delete(MANAGEURL + CONNECTOR + '/' + id)
   }
 
+  getOrchestrators (){
+      return axios.get(MANAGEURL + '/v1/orchestrator')
+  }
+
+  editOrchestrator (data, orchestrator_id){
+      return axios.put(MANAGEURL + ORCHESTRATOR + '/' + orchestrator_id, data)
+  }
+
+  addOrchestrator (data){
+      return axios.post(MANAGEURL + ORCHESTRATOR, data)
+  }
+
+  deleteOrchestrator (id){
+      return axios.delete(MANAGEURL + ORCHESTRATOR + '/' + id)
+  }
+
   getProcessors (){
     return axios.get(MANAGEURL + PROCESSOR)
   }
 
-  editProcessors (id, name, script){
-    return axios.put(MANAGEURL + PROCESSOR + '/' + id, {
-      transform_name: name,
-      transform_script: script
-    })
+  editProcessor (data, processor_id){
+    return axios.put(MANAGEURL + PROCESSOR + '/' + processor_id, data)
   }
 
-  addProcessor (name, script){
-    return axios.post(MANAGEURL + PROCESSOR, {
-      transform_name: name,
-      transform_script: script
-    })
+  addProcessor (data){
+    return axios.post(MANAGEURL + PROCESSOR, data)
   }
 
-  getOrchestrators (){
-    return axios.get(MANAGEURL + '/v1/orchestrator')
-  }
+    deleteProcessor (id){
+        return axios.delete(MANAGEURL + PROCESSOR + '/' + id)
+    }
 
-  editOrchestrators (id, name){
-    return axios.put(MANAGEURL + ORCHESTRATOR + '/' + id, {
-      name: name
-    })
-  }
-
-  addOrchestrator (name){
-    return axios.post(MANAGEURL + ORCHESTRATOR, {
-      name: name
-    })
-  }
 
 }

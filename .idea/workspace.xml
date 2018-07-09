@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0d4ac9-5e45-4ae0-95bf-07993503b4a4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Connectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Connectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orchestrator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orchestrator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/AddOrchestrators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/AddProcessors.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/EditConnectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/EditConnectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/RestLibraries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/RestLibraries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UpdateOrchestrators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/EditOrchestrators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UpdateProcessors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/EditProcessors.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +34,8 @@
       <file leaf-file-name="Connectors.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Connectors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="55" column="57" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="57" />
+            <state relative-caret-position="217">
+              <caret line="18" column="82" lean-forward="true" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="82" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -32,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditConnectors.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/EditConnectors.js">
+      <file leaf-file-name="Orchestrator.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Orchestrator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            <state relative-caret-position="570">
+              <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -44,13 +55,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestLibraries.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lib/RestLibraries.js">
+      <file leaf-file-name="Processors.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Processors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+            <state relative-caret-position="-84">
+              <caret line="18" column="81" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="81" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,6 +73,11 @@
     <findStrings>
       <find>submit_form</find>
       <find>submit_add</find>
+      <find>black</find>
+      <find>modal</find>
+      <find>pop</find>
+      <find>button</find>
+      <find>btn btn-primary</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,9 +88,17 @@
       <list>
         <option value="$PROJECT_DIR$/src/lib/UpdateConnectors.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/Main.js" />
+        <option value="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/src/css/index.css" />
+        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/Connectors.js" />
-        <option value="$PROJECT_DIR$/src/lib/RestLibraries.js" />
         <option value="$PROJECT_DIR$/src/lib/EditConnectors.js" />
+        <option value="$PROJECT_DIR$/src/lib/RestLibraries.js" />
+        <option value="$PROJECT_DIR$/src/lib/EditProcessors.js" />
+        <option value="$PROJECT_DIR$/src/lib/EditOrchestrators.js" />
+        <option value="$PROJECT_DIR$/src/Processors.js" />
+        <option value="$PROJECT_DIR$/src/Orchestrator.js" />
       </list>
     </option>
   </component>
@@ -95,10 +119,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1313" />
-    <option name="y" value="40" />
-    <option name="width" value="1753" />
-    <option name="height" value="967" />
+    <option name="x" value="1356" />
+    <option name="y" value="33" />
+    <option name="width" value="1730" />
+    <option name="height" value="954" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -172,26 +196,27 @@
       <updated>1530179722265</updated>
       <workItem from="1530179723422" duration="426000" />
       <workItem from="1530530306928" duration="4726000" />
-      <workItem from="1530595389312" duration="26952000" />
+      <workItem from="1530595389312" duration="48613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32104000" />
+    <option name="totallyTimeSpent" value="53765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49844238" visible="true" weight="0.24960506" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49844238" visible="true" weight="0.24960506" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.07098121" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" sideWeight="0.50155765" side_tool="true" weight="0.24960506" />
       <window_info id="Structure" order="1" sideWeight="0.50155765" side_tool="true" weight="0.24960506" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32881" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5156576" />
       <window_info id="Favorites" order="3" sideWeight="0.50155765" side_tool="true" weight="0.24960506" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -200,7 +225,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,14 +316,6 @@
     <entry file="file://$PROJECT_DIR$/src/lib/config.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49" />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -316,19 +332,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/AddConnectors.js" />
-    <entry file="file://$PROJECT_DIR$/src/Orchestrator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -336,20 +340,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/UpdateOrchestrators.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="17" selection-end-column="3" />
+        <state relative-caret-position="101">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="6082" column="6" selection-start-line="6082" selection-start-column="6" selection-end-line="6082" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="71" lean-forward="true" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Connectors.js">
+    <entry file="file://$PROJECT_DIR$/src/lib/EditProcessors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="55" column="57" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="57" />
+        <state relative-caret-position="255">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/RestLibraries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/EditOrchestrators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -359,19 +414,39 @@
     <entry file="file://$PROJECT_DIR$/src/lib/EditConnectors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <caret line="24" column="64" lean-forward="true" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/RestLibraries.js">
+    <entry file="file://$PROJECT_DIR$/src/Connectors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+        <state relative-caret-position="217">
+          <caret line="18" column="82" lean-forward="true" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="82" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="18" column="81" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Orchestrator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

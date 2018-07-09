@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid/dist/styles/ag-grid.css';
-import 'ag-grid/dist/styles/ag-theme-balham.css'
+import 'ag-grid/dist/styles/ag-theme-blue.css'
 import RestAPI from "./lib/RestLibraries";
-import AddProcessors from "./lib/AddProcessors";
-import UpdateProcessors from "./lib/UpdateProcessors";
+import EditProcessors from "./lib/EditProcessors";
 
 const libraries = new RestAPI();
+
+var data = {};
 
 class Processors extends Component {
   constructor(props) {
@@ -15,9 +16,9 @@ class Processors extends Component {
       this.state = {
         hasMounted: false,
           columnDefs: [
-              {headerName: "ID", field: "id", checkboxSelection: true},
-              {headerName: "Transform Name", field: "transform_name"},
-              {headerName: "Transform Script", field: "transform_script"}
+              {headerName: "ID", field: "id", checkboxSelection: true, width: 350},
+              {headerName: "Transform Name", field: "transform_name", width: 350},
+              {headerName: "Transform Script", field: "transform_script", width: 350}
           ],
           rowData: []
       }
@@ -29,17 +30,27 @@ class Processors extends Component {
       this.setState({ hasMounted: true })
     }
 
-  getSelectedRow = e => {
-      const selectedNodes = this.gridApi.getSelectedNodes()
-      const selectedData = selectedNodes.map(node => node.data)
-      this.processorId = selectedData.map(node => node.id)
-      this.updatedTransformName = selectedData.map(node => node.transform_name)
-      this.updatedTransformScript = selectedData.map(node => node.transform_script)
-      ReactDOM.render(<UpdateProcessors id = {this.processorId} name = {this.updatedTransformName} script = {this.updatedTransformScript} />, document.getElementById("submit_form"))
+  editProcessor = e => {
+      if (this.gridApi.getSelectedRows().length > 0) {
+          const selectedNodes = this.gridApi.getSelectedNodes()
+          const selectedData = selectedNodes.map(node => node.data)
+          this.processorId = selectedData.map(node => node.id)
+          this.updatedTransformName = selectedData.map(node => node.transform_name)
+          this.updatedTransformScript = selectedData.map(node => node.transform_script)
+          data = {
+              transform_name: this.updatedTransformName,
+              transform_script: this.updatedTransformScript,
+
+          };
+          ReactDOM.render(<EditProcessors id={this.processorId} updateItems={data}/>, document.getElementById("formSubmit"))
+      }
+      else {
+          alert("Please select a row to edit values");
+      }
   }
 
   addProcessor () {
-      ReactDOM.render(<AddProcessors />, document.getElementById("submit_add"))
+      ReactDOM.render(<EditProcessors updateItems={data}/>, document.getElementById("formSubmit"))
   }
 
   deleteProcessor = e => {
@@ -53,20 +64,23 @@ class Processors extends Component {
 
 
   render() {
-    return (
-          <div className="ag-theme-balham" style= {{height: '900px',width: '1000px' }} >
-              <button className="button" onClick={this.getSelectedRow}>Edit</button>
-              <button className="button" onClick={this.addProcessor}>Add</button>
-              <button className="button" onClick={this.deleteProcessor}>Delete</button>
+      return (
+          <div className="ag-theme-blue" style={{height: '600px', width: '900px'}}>
+              <button type="button" className="btn btn-primary" onClick={this.editProcessor}>Edit</button>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <button type="button" className="btn btn-primary" onClick={this.addProcessor}>Add</button>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <button type="button" className="btn btn-primary" onClick={this.deleteProcessor}>Delete</button>
+              <br/>
               <AgGridReact
-                  onGridReady={ params => this.gridApi = params.api }
+                  onGridReady={params => this.gridApi = params.api}
                   enableSorting={true}
                   enableFilter={true}
                   columnDefs={this.state.columnDefs}
                   rowData={this.state.rowData}>
               </AgGridReact>
           </div>
-        );
+      );
   }
 };
 
