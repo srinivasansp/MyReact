@@ -16,7 +16,13 @@ class Orchestrator extends Component {
         this.state = {
             hasMounted: false,
             columnDefs: [
-                {headerName: "ID", field: "id", checkboxSelection: true, width: 350},
+                {headerName: "ID", field: "id", checkboxSelection: true, width: 350, cellRenderer: (params) => {
+                        var link = document.createElement('a');
+                        link.href = "https://google.com";
+                        link.innerText = params.value;
+                        return link;
+                        }
+                    },
                 {headerName: "Orchestrator Name", field: "name", width: 500}
             ],
             rowData: []
